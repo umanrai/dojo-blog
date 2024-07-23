@@ -2,29 +2,21 @@ import { useEffect, useState } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
-    const [blogs, setBlogs] = useState([
-        { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id:1 },
-        { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id:2 },
-        { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id:3 }
-    ]);
-
-    const [name, setName] = useState('mario');
-
-    const handleDelete = (id) => {
-        const newBlogs = blogs.filter(blog => blog.id !== id);
-        setBlogs(newBlogs);
-    }
+    const [blogs, setBlogs] = useState(null);
 
     useEffect(() => {
-        console.log('use effect ran');
-        console.log(name);
-    }, [name]);
+        fetch('http://localhost:8000/blogs')
+            .then(res => {          // res (response object)
+                return res.json();  // res.json=(this passes the json into a javascript object) then return it.
+            })
+            .then(data => {
+                setBlogs(data);
+            })
+    }, []);
 
     return (
         <div className="home">
-            <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>  
-            <button onClick={() => setName('luigi')}>Change name</button>
-            <p>{name}</p>
+            {blogs && <BlogList blogs={blogs} title="All Blogs" />} {/* conditional templating "&& = logical and": its evaluates the left first and its true move to right */}
         </div>
     );
 }   
