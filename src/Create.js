@@ -4,11 +4,23 @@ const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('mario');
+    const [isPending, setIsPending] = useState(false);
 
-    const handleSubmit = (e) => {
+    // submit event
+    const handleSubmit = (e) => { 
         e.preventDefault(); // it doesnt refresh the page
         const blog = {title, body, author};
-        console.log(blog);
+
+        setIsPending(true);
+
+        fetch('http://localhost:8000/blogs', {
+            method: 'POST',
+            header: { "Content-type": "application/json" }, // 'Content-Type': 'application/json': Specifies that the content being sent is JSON.
+            body: JSON.stringify(blog) // Converts the `blog` JavaScript object into a JSON string for the request body.
+        }).then(() => {
+            console.log('new blog added.')
+            setIsPending(false);
+        })
     }
 
     return (
@@ -36,7 +48,8 @@ const Create = () => {
                     <option value="mario">mario</option>
                     <option value="yoshi">yoshi</option>
                 </select>
-                <button>Add Blog</button>
+                { !isPending && <button>Add Blog</button> }
+                { isPending && <button disabled>Adding blog...</button> }
             </form>
         </div>
     );
