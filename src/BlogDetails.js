@@ -3,12 +3,15 @@ import useFetch from "./useFetch";
 
 const BlogDetails = () => {
     const {id} = useParams();
-    const {data:blog, error, isPending} = useFetch(`http://localhost:8000/blogs/${id}`); // url concatenation: http://localhost:8000/blogs with id in template string.
+    const {data:blog, error, isPending} = useFetch(`blogs/${id}`); // url concatenation: http://localhost:8000/blogs with id in template string.
     const navigate = useNavigate(); // useNavigate hook is used for redirect
 
     
     const handleClick = () => {
-        fetch(`http://localhost:8000/blogs/${id}`, {
+
+        const api_host = process.env.REACT_APP_API_HOST
+
+        fetch(`${api_host}blogs/${id}`, {
             method: 'DELETE'
         }).then(() => {
             console.log('blog deleted.')

@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 
+const API_HOST = process.env.REACT_APP_API_HOST
+
 const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
+
+    url = API_HOST + url
 
     useEffect(() => {
         const abortCont = new AbortController(); // to handle cleanup
