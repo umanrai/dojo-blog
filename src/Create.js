@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('mario');
     const [isPending, setIsPending] = useState(false);
+    const navigate = useNavigate(); // useNavigate hook is used for redirect
 
     // submit event
     const handleSubmit = (e) => { 
@@ -20,6 +22,8 @@ const Create = () => {
         }).then(() => {
             console.log('new blog added.')
             setIsPending(false);
+
+            navigate('/'); // it navigate to home
         })
     }
 
