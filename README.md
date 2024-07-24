@@ -8,7 +8,7 @@ Add the **REACT_APP_API_HOST** in the env file.
 
 - db
 
-`cp db.json.bhk db.json`
+`cp data/db.json.bhk data/db.json`
 
 # Running
 
