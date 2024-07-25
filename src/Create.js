@@ -17,7 +17,7 @@ const Create = () => {
 
         const api_host = process.env.REACT_APP_API_HOST
 
-        fetch('${api_host}blogs', {
+        fetch(`${api_host}blogs`, {
             method: 'POST',
             header: { "Content-type": "application/json" }, // 'Content-Type': 'application/json': Specifies that the content being sent is JSON.
             body: JSON.stringify(blog) // Converts the `blog` JavaScript object into a JSON string for the request body.

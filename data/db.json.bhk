@@ -1,3 +1,22 @@
 {
-  "blogs": []
+  "blogs": [
+    {
+      "title": "dvf",
+      "body": "dfvfvd",
+      "author": "mario",
+      "id": "c574"
+    },
+    {
+      "title": "hib 21321312321",
+      "body": "uhvu\n21321312321",
+      "author": "yoshi",
+      "id": "b581"
+    },
+    {
+      "id": "e73e",
+      "title": "gu",
+      "body": "kha",
+      "author": "mario"
+    }
+  ]
 }

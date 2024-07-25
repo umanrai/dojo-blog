@@ -16,7 +16,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "copy-db": "cp data/db.json.bhk data/db.json",
+    "start-json-server": "npx json-server --watch data/db.json --port 8000",
+    "start-dev": "npm run copy-db && npm run start-json-server"
   },
   "eslintConfig": {
     "extends": [

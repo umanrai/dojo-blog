@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import useFetch from "./useFetch";
 
 const BlogDetails = () => {
@@ -30,9 +30,13 @@ const BlogDetails = () => {
                     <p>Written by { blog.author }</p>
                     <div>{blog.body}</div>
                     {/* delete functionality */}
+                    <Link to={`/edit/${blog.id}`}>
+                        <button>Edit</button>
+                    </Link>
                     <button onClick={handleClick}>delete</button> 
                 </article>
             )}
+            
         </div>
      );
 }

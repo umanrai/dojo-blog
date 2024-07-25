@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
 import NOtFound from './NotFound';
+import Edit from './Edit';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<Create />} />
+            <Route path="/edit/:id" element={<Edit />} />
 
             {/* :id (route parameter name), the `:id` parameter in the `/blogs/:id` route will capture part of the URL and pass it to the BlogDetails component. */}
             <Route path="/blogs/:id" element={<BlogDetails />} />
