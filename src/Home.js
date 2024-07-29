@@ -2,7 +2,7 @@ import BlogList from "./BlogList";
 import useFetch from "./useFetch";
 
 const Home = () => {
-    // data:blogs (renaming the data to blogs)
+    // data:blogs (renaming the data to blogs) 
     const {data: blogs, isPending, error} = useFetch('blogs');
 
     return (

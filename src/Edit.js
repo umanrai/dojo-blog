@@ -67,6 +67,7 @@ const Edit = () => {
                     <option value="yoshi">yoshi</option>
                 </select>
                 {!isPending && <button>Update Blog</button>}
+                { isPending && <button disabled>Updating...</button> }
             </form>
         );
     }

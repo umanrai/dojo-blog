@@ -19,7 +19,8 @@
     "eject": "react-scripts eject",
     "copy-db": "cp data/db.json.bhk data/db.json",
     "start-json-server": "npx json-server --watch data/db.json --port 8000",
-    "start-dev": "npm run copy-db && npm run start-json-server"
+    "start-dev": "npm run copy-db && npm run start-json-server",
+    "dev": "concurrently \"npm:start\" \"npm:start-json-server\""
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }

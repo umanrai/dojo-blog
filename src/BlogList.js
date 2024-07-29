@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 
-const BlogList = ({blogs, title}) => {  // easy way to pass props
+const BlogList = ({ blogs, title }) => {  // easy way to pass props
     // const blogs = props.blogs;
     // const title = props.title;
+
+    // const { blogs, title } = props
 
     return ( 
         <div className="blog-list">
