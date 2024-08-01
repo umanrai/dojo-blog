@@ -158,3 +158,67 @@
 .action {
   display: flex;
 }
+
+/* Tags */
+.tag_create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.tag_create label {
+  text-align: left;
+  display: block;
+}
+.tag_create h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 30px;
+}
+.tag_create input {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.tag_create button {
+  background-color: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Edit Tag*/
+.tag_edit {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.tag_edit label {
+  text-align: left;
+  display: block;
+}
+.tag_edit h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 30px;
+}
+.tag_edit input {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.tag_edit button {
+  background-color: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}

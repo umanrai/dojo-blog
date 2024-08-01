@@ -10,6 +10,10 @@ import UserList from './user/List';
 import UserCreate from './user/Create';
 import UserEdit from './user/Edit';
 import UserShow from './user/Show';
+import TagList from './tag/List';
+import TagCreate from './tag/Create';
+import TagEdit from './tag/Edit';
+import TagShow from './tag/Show';
 
 function App() {
   return (
@@ -25,6 +29,13 @@ function App() {
             <Route path="/user/edit/:id" element={<UserEdit />} />
             <Route path="/user/show/:id" element={<UserShow />} />
             <Route path="/edit/:id" element={<Edit />} />
+
+            <Route path="/tags" element={<TagList />} />
+            <Route path="/tag/create" element={<TagCreate />} />
+            <Route path="/tag/edit/:id" element={<TagEdit />} />
+            <Route path="/tag/show/:id" element={<TagShow />} />
+
+
 
             {/* :id (route parameter name), the `:id` parameter in the `/blogs/:id` route will capture part of the URL and pass it to the BlogDetails component. */}
             <Route path="/blogs/:id" element={<BlogDetails />} />
