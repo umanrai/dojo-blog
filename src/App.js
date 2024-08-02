@@ -14,6 +14,10 @@ import TagList from './tag/List';
 import TagCreate from './tag/Create';
 import TagEdit from './tag/Edit';
 import TagShow from './tag/Show';
+import CategoryList from './category/List';
+import CreateCategory from './category/Create';
+import CategoryEdit from './category/Edit';
+import CategoryShow from './category/Show';
 
 function App() {
   return (
@@ -35,7 +39,10 @@ function App() {
             <Route path="/tag/edit/:id" element={<TagEdit />} />
             <Route path="/tag/show/:id" element={<TagShow />} />
 
-
+            <Route path="/categories" element={<CategoryList />} />
+            <Route path="/category/create" element={<CreateCategory />} />
+            <Route path="/category/edit/:id" element={<CategoryEdit />} />
+            <Route path="/category/show/:id" element={<CategoryShow />} />
 
             {/* :id (route parameter name), the `:id` parameter in the `/blogs/:id` route will capture part of the URL and pass it to the BlogDetails component. */}
             <Route path="/blogs/:id" element={<BlogDetails />} />

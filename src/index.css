@@ -222,3 +222,49 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+/* Catgeory */
+.category_action {
+  display: flex;
+}
+
+.category_action a {
+  margin-right: 5px;
+}
+
+/* 
+.category_edit {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.category_edit label {
+  text-align: left;
+  display: block;
+}
+.category_edit h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 30px;
+}
+.category_edit input {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+} */
+.category_edit button {
+  background-color: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* .category_edit textarea {
+  width: 400px;
+} */
