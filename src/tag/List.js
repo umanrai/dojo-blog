@@ -57,7 +57,8 @@ const TagList = () => {
                                     <td>{tag.slug}</td>
                                     <td>
                                         {/* {getStatus(tag)} */}
-                                        <span className={`badge bg-${tag.status == 0 ? "danger" : "primary"}`}>
+                                        {/* ` ` = string literals(it is used for to concatination of string and dinamic value. $ is used for concatinate ) */}
+                                        <span className={`badge bg-${tag.status == 0 ? "danger" : "primary"}`}> 
                                             {tag.status == 0 ? "Inactive" : "Active"}
                                         </span> 
                                         {/* {tag.status == 0 ? <span class="badge bg-danger">Inactive</span> : <span class="badge bg-primary">Active</span>} */}
