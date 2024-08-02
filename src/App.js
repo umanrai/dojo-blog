@@ -1,10 +1,9 @@
 import Navbar from './Navbar';
-import Home from './Home';
+import Home from './blog/Home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Create from './Create';
-import BlogDetails from './BlogDetails';
+import Create from './blog/Create';
 import NOtFound from './NotFound';
-import Edit from './Edit';
+import Edit from './blog/Edit';
 import UserList from './user/List';
 
 import UserCreate from './user/Create';
@@ -18,6 +17,8 @@ import CategoryList from './category/List';
 import CreateCategory from './category/Create';
 import CategoryEdit from './category/Edit';
 import CategoryShow from './category/Show';
+import BlogList from './blog/LIst';
+import BlogDetails from './blog/Show';
 
 function App() {
   return (
@@ -27,12 +28,15 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/users" element={<UserList />} />
-            <Route path="/create" element={<Create />} />
+            <Route path="/blog/create" element={<Create />} />
+            <Route path="/blog/show/:id" element={<BlogDetails />} />
+            <Route path="/blog/edit/:id" element={<Edit />} />
+            <Route path="/blogs" element={<BlogList />} />
+
             <Route path="/user/create" element={<UserCreate />} />
+            <Route path="/users" element={<UserList />} />
             <Route path="/user/edit/:id" element={<UserEdit />} />
             <Route path="/user/show/:id" element={<UserShow />} />
-            <Route path="/edit/:id" element={<Edit />} />
 
             <Route path="/tags" element={<TagList />} />
             <Route path="/tag/create" element={<TagCreate />} />

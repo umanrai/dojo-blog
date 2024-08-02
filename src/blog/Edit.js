@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useFetch from "./useFetch";
+import useFetch from "../useFetch";
 
 const Edit = () => {
     const {id} = useParams();

@@ -1,5 +1,5 @@
-import BlogList from "./BlogList";
-import useFetch from "./useFetch";
+import BlogList from "./LIst";
+import useFetch from "../useFetch";
 
 const Home = () => {
     // data:blogs (renaming the data to blogs) 
