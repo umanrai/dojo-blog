@@ -32,13 +32,11 @@ const UserList = () => {
                     <tr>
                       <th scope="col">Image</th>
                       <th scope="col">Username</th>
-                      <th scope="col">Firstname</th>
-                      <th scope="col">Middlename</th>
-                      <th scope="col">Lastname</th>
+                      <th scope="col">Fullname</th>
                       <th scope="col">Email</th>
                       <th scope="col">Password</th>
-                      <th scope="col">Created_At</th>
-                      <th scope="col">Updated_At</th>
+                      <th nowrap="nowrap" scope="col" >Created At</th>
+                      <th nowrap="nowrap" scope="col">Updated At</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -47,13 +45,11 @@ const UserList = () => {
                       <tr key={user.id}>
                         <td>{user.image}</td>
                         <td>{user.username}</td>
-                        <td>{user.first_name}</td>
-                        <td>{user.middle_name}</td>
-                        <td>{user.last_name}</td>
+                        <td nowrap="nowrap" >{user.first_name} {user.middle_name}{user.last_name}</td>
                         <td>{user.email}</td>
                         <td>{user.password}</td>
-                        <td>{user.created_at}</td>
-                        <td>{user.updated_at}</td>
+                        <td nowrap="nowrap">{user.created_at}</td>
+                        <td nowrap="nowrap">{user.updated_at}</td>
                         <td>
                           <div className="action">
                           <Link to={`/user/edit/${user.id}`}>
