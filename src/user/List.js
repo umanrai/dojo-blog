@@ -31,14 +31,14 @@ const UserList = () => {
                   <thead>
                     <tr>
                       <th scope="col">Image</th>
+                      <th scope="col">Username</th>
                       <th scope="col">Firstname</th>
                       <th scope="col">Middlename</th>
                       <th scope="col">Lastname</th>
                       <th scope="col">Email</th>
                       <th scope="col">Password</th>
-                      <th scope="col">Created_at</th>
-                      <th scope="col">Updated_at</th>
-                      <th scope="col">Username</th>
+                      <th scope="col">Created_At</th>
+                      <th scope="col">Updated_At</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -46,6 +46,7 @@ const UserList = () => {
                     {users.map((user) => (
                       <tr key={user.id}>
                         <td>{user.image}</td>
+                        <td>{user.username}</td>
                         <td>{user.first_name}</td>
                         <td>{user.middle_name}</td>
                         <td>{user.last_name}</td>
@@ -53,7 +54,6 @@ const UserList = () => {
                         <td>{user.password}</td>
                         <td>{user.created_at}</td>
                         <td>{user.updated_at}</td>
-                        <td>{user.username}</td>
                         <td>
                           <div className="action">
                           <Link to={`/user/edit/${user.id}`}>
