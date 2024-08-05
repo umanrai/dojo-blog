@@ -1,7 +1,8 @@
 import React from 'react'
 import useFetch from '../useFetch';
 import { Link, useNavigate } from "react-router-dom";
-
+import Swal from 'sweetalert2';
+ 
 
 const UserList = () => {
   const {data: users, isPending, error} = useFetch('users');
@@ -10,14 +11,27 @@ const UserList = () => {
 
   const handleClick = (id) => {
     const api_host = process.env.REACT_APP_API_HOST
-
+    // SweetAlert2 (often abbreviated as 'Swal'): popular JavaScript library used for creating beautiful, customizable, and responsive alert boxes.
+    Swal.fire({
+      icon: "warning",
+      title: "Are you sure?",
+      text: "You want to delete the user!",
+      showCancelButton: true,
+      confirmButtonText: "Confirm",
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33"
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
         fetch(`${api_host}users/${id}`, {
-            method: 'DELETE'
+          method: 'DELETE'
         }).then(() => {
-            console.log('user deleted.')
-    
-            navigate('/users'); // it navigate to home
+          console.log('user deleted.')
+  
+          navigate('/users'); // it navigate to home
         }) 
+      }
+    });
   };
 
   return (
@@ -34,8 +48,8 @@ const UserList = () => {
                       <th scope="col">Username</th>
                       <th scope="col">Fullname</th>
                       <th scope="col">Email</th>
-                      <th nowrap="nowrap" scope="col" >Created At</th>
-                      <th nowrap="nowrap" scope="col">Updated At</th>
+                      <th scope="col" >Created At</th>
+                      <th scope="col">Updated At</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
